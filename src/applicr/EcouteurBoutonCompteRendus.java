@@ -1,5 +1,6 @@
 package applicr;
 
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Date;
@@ -8,6 +9,7 @@ import java.util.GregorianCalendar;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
@@ -69,18 +71,14 @@ public class EcouteurBoutonCompteRendus implements ActionListener {
 		textArea.setEditable(false);
 		textArea.setLineWrap(true);
 		textArea.setWrapStyleWord(true);
-
-		JScrollPane scrollBilan = new JScrollPane(textArea);
-		
-		
-		
+		JScrollPane scrollPane = new JScrollPane(textArea);
 		
 		switch(this.column){
 			case 6 :
 				System.out.println("----------------------------------------") ;
 				System.out.println("[Action clique CR]") ;				
 				controleur.actualiserTableauCR();
-				JOptionPane.showMessageDialog(null,scrollBilan,"Compte rendu",JOptionPane.CLOSED_OPTION);
+				JOptionPane.showMessageDialog(null,scrollPane,"Compte rendu",JOptionPane.CLOSED_OPTION);
 				modele.setEstlu(numeroCompteRendu);
 				break;
 		}
